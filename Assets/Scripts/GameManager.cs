@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public bool reading;
+    public bool hasKey;
+    public bool doorOpened;
 
     // Start is called before the first frame update
     void Start()
