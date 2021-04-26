@@ -1208,6 +1208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reading: 0
+  hasKey: 0
+  doorOpened: 0
 --- !u!4 &1659646179
 Transform:
   m_ObjectHideFlags: 0
