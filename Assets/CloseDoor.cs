@@ -25,6 +25,7 @@ public class CloseDoor : MonoBehaviour
             //print("Cerrando");
             if (gm.doorOpened)
                 gm.doorOpened = false;
+            gm.currentRoom = GameManager.Rooms.room2;
 
         }
     }

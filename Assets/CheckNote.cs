@@ -13,6 +13,12 @@ public class CheckNote : MonoBehaviour
     private void Start()
     {
         gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        for (int i = 0; i < onCheckingObjects.Length; i++)
+        {
+            //print("leyendo");
+            onCheckingObjects[i].SetActive(false);
+        }
+
     }
 
     private void OnTriggerStay(Collider other)
@@ -22,13 +28,15 @@ public class CheckNote : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && !gm.reading)
             {
                 preReadingText.SetActive(false);
+
+                gm.reading = true;
                 //print("Reading");
-                for(int i = 0; i < onCheckingObjects.Length; i++)
+                for (int i = 0; i < onCheckingObjects.Length; i++)
                 {
+                    print("leyendo");
                     onCheckingObjects[i].SetActive(true);
                 }
 
-                gm.reading = true;
             }
             else if(Input.GetKeyDown(KeyCode.E) && gm.reading)
             {
