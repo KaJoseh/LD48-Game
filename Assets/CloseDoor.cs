@@ -19,10 +19,10 @@ public class CloseDoor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Entramos");
+        //print("Entramos");
         if (other.CompareTag("Player"))
         {
-            print("Cerrando");
+            //print("Cerrando");
             if (gm.doorOpened)
                 gm.doorOpened = false;
 

@@ -23,7 +23,7 @@ public class DoorController : MonoBehaviour
 
     private void Update()
     {
-        print(gm.doorOpened);
+        //print(gm.doorOpened);
         if (gm.doorOpened)
         {
             if(gameObject.transform.position.y <= maxYPosition)
