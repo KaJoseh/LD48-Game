@@ -5,6 +5,9 @@ public class noteTextManager : MonoBehaviour
 {
     public TextMeshProUGUI noteText;
 
+    [TextArea]
+    public string text1, text2, text3, text4, text5;
+
     GameManager gm;
 
     // Start is called before the first frame update
@@ -19,13 +22,13 @@ public class noteTextManager : MonoBehaviour
         switch (gm.currentRoom)
         {
             case GameManager.Rooms.room1:
-                noteText.SetText("Open the door");
+                noteText.SetText(text1);
                 break;
             case GameManager.Rooms.room2:
-                noteText.SetText("I have lost my eye, give it back to me.");
+                noteText.SetText(text2);
                 break;
             case GameManager.Rooms.room3:
-                noteText.SetText("Congrats, you made your way to the unfinished part of the game. Thanks for playing.");
+                noteText.SetText(text3);
                 break;
             case GameManager.Rooms.room4:
                 break;

@@ -44,7 +44,7 @@ public class CloseDoor : MonoBehaviour
                 case GameManager.Rooms.room5:
                     break;
             }
-
+            gameObject.SetActive(false);
         }
     }
 }
