@@ -25,6 +25,7 @@ public class noteTextManager : MonoBehaviour
                 noteText.SetText("I have lost my eye, give it back to me.");
                 break;
             case GameManager.Rooms.room3:
+                noteText.SetText("Congrats, you made your way to the unfinished part of the game. Thanks for playing.");
                 break;
             case GameManager.Rooms.room4:
                 break;
