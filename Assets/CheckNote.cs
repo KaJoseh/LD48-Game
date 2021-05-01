@@ -9,9 +9,11 @@ public class CheckNote : MonoBehaviour
     public GameObject preReadingText;
 
     GameManager gm;
+    Level3Manager l3m;
 
     private void Start()
     {
+        l3m = GameObject.FindWithTag("Player").GetComponent<Level3Manager>();
         gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         for (int i = 0; i < onCheckingObjects.Length; i++)
         {
@@ -58,14 +60,17 @@ public class CheckNote : MonoBehaviour
 
                 gm.reading = true;
                 //print("Reading");
-                other.transform.GetChild(0).gameObject.SetActive(true);
+                l3m.readingObjects.SetActive(true);
 
             }
             else if (Input.GetKeyDown(KeyCode.E) && gm.reading)
             {
                 //print("No reading");
-                other.transform.GetChild(0).gameObject.SetActive(false);
-
+                l3m.readingObjects.SetActive(false);
+                if (!l3m.hasRead)
+                {
+                    l3m.hasRead = true;
+                }
                 gm.reading = false;
             }
         }

@@ -10,6 +10,7 @@ TagManager:
   - CloseToInteract
   - PyramidEye
   - CustomNote
+  - EventTrigger
   layers:
   - Default
   - TransparentFX
