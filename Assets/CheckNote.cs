@@ -49,11 +49,31 @@ public class CheckNote : MonoBehaviour
                 gm.reading = false;
             }
         }
+        else if (other.CompareTag("CustomNote"))
+        {
+            
+            if (Input.GetKeyDown(KeyCode.E) && !gm.reading)
+            {
+                preReadingText.SetActive(false);
+
+                gm.reading = true;
+                //print("Reading");
+                other.transform.GetChild(0).gameObject.SetActive(true);
+
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && gm.reading)
+            {
+                //print("No reading");
+                other.transform.GetChild(0).gameObject.SetActive(false);
+
+                gm.reading = false;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Note") && !gm.reading)
+        if (other.CompareTag("Note") || other.CompareTag("CustomNote") && !gm.reading)
         {
             preReadingText.SetActive(true);
         }
@@ -61,7 +81,7 @@ public class CheckNote : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Note") && !gm.reading)
+        if (other.CompareTag("Note") || other.CompareTag("CustomNote") && !gm.reading)
         {
             preReadingText.SetActive(false);
         }
